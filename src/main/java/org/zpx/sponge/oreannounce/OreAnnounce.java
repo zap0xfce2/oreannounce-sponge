@@ -25,7 +25,7 @@ import org.spongepowered.api.text.serializer.TextSerializers;
 
 import java.io.IOException;
 
-@Plugin(id = "oreannounce", name = "OreAnnounce", version = "6.1.0", authors = "Zap0xfce2",
+@Plugin(id = "oreannounce", name = "OreAnnounce", version = "7.2.1", authors = "Zap0xfce2",
         url = "https://github.com/zap0xfce2/oreannounce-sponge",
         description = "Announces your ore findings.")
 public class OreAnnounce {
@@ -91,7 +91,7 @@ public class OreAnnounce {
     @Listener
     public void BlockDestroy(ChangeBlockEvent.Break BreakBlockEvent, @Root Player player) {
 
-        if (OreBlock != "" && FirstOreBlock) {
+        if (!OreBlock.equals("") && FirstOreBlock) {
             LastOreBlockPosition = CurrentOreBlockPosition;
             FirstOreBlock = false;
         }
@@ -157,7 +157,7 @@ public class OreAnnounce {
         boolean canBeAnnounced = false;
 
         // Spammen der Nachricht verhindern
-        if (LocalCurrentOreBlockPosition.getX() - LocalLastOreBlockPosition.getX() >= 5 || LocalCurrentOreBlockPosition.getX() - LocalLastOreBlockPosition.getX() <= -5 || OreBlock != LastOreBlock) {
+        if (LocalCurrentOreBlockPosition.getX() - LocalLastOreBlockPosition.getX() >= 5 || LocalCurrentOreBlockPosition.getX() - LocalLastOreBlockPosition.getX() <= -5 || !OreBlock.equals(LastOreBlock)) {
             canBeAnnounced = true;
         }
 

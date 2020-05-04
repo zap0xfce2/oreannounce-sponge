@@ -2,7 +2,7 @@
     {
         "modid": "oreannounce",
         "name": "OreAnnounce",
-        "version": "6.1.0",
+        "version": "7.2.1",
         "description": "Announces your ore findings.",
         "url": "https://github.com/zap0xfce2/oreannounce-sponge"
     }
